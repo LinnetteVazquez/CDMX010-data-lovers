@@ -267,9 +267,41 @@ main {
   text-decoration: none;
   cursor: pointer;
 }
+/*DIV QUE CONTIENE A LA IMG Y INFORMACION*/
+.div-general{
+  display:flex;
+  flex-wrap: nowrap;
+  
+}
+/*DIV QUE CONTIENE LA INFORMACION*/
+.div-info{
+  
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(89, 110, 110);
+}
+.div-info table{  
+  background-color: teal;
+  width: 100%;
+  height: 100%;
+}
+th h3{
+  text-align: center;
+}
+th{
+  text-align: left;
+}
 /*IMAGEN DEL MODAL*/
+.div-img-modal{
+  display: flex;
+ 
+  
+}
 #img-modal{
-width: 300PX;
-height: 600PX;
+height: 400PX;
+max-width:300px;
+
 display: flex;
 }
+
