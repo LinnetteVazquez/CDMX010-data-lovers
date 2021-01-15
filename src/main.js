@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { templateCard, order_desc, order_asc } from "./data.js";
+import { templateCard, order_desc, order_asc, filterSearch } from "./data.js";
 
 //recibe listado de los personajes
 function renderCards(list) {
@@ -12,34 +12,39 @@ function renderCards(list) {
 }
 //renderiza todos
 renderCards(data.results);
-//FILTRADO 
-const raceElements = document.getElementsByName('race');
+
+//FILTRADO
+
+const raceElements = document.getElementsByName("race");
 let dataFiltered;
 
-for (let i = 0; i < raceElements.length; i++) {    
-  raceElements[i].addEventListener('click', function (e) {
-    const value = e.target.dataset.value;    
-    if (value ==="Human" || value ==="Alien") {
-      let newArraySpecie = data.results.filter( character => character.species === value);
+for (let i = 0; i < raceElements.length; i++) {
+  raceElements[i].addEventListener("click", function (e) {
+    const value = e.target.dataset.value;
+    if (value === "Human" || value === "Alien") {
+      let newArraySpecie = data.results.filter(
+        (character) => character.species === value
+      );
       dataFiltered = newArraySpecie;
       return renderCards(newArraySpecie);
     }
-    if (value==="Female"|| value ==="Male"){
-     let newArrayGender = data.results.filter(character => character.gender === value );
-     dataFiltered = newArrayGender;
+    if (value === "Female" || value === "Male") {
+      let newArrayGender = data.results.filter(
+        (character) => character.gender === value
+      );
+      dataFiltered = newArrayGender;
       return renderCards(newArrayGender);
     }
-    if (value==="Alive"|| value ==="Dead"){
-      let newArrayStatus = data.results.filter(character => character.status ===value);
-      dataFiltered=newArrayStatus;
+    if (value === "Alive" || value === "Dead") {
+      let newArrayStatus = data.results.filter(
+        (character) => character.status === value
+      );
+      dataFiltered = newArrayStatus;
       return renderCards(dataFiltered);
     }
-  return  dataFiltered;
-  
-  
-  });  
+    return dataFiltered;
+  });
 }
-
 
 /*const array = origin;
 let repetidos = {};
@@ -62,8 +67,8 @@ const location_items = document.querySelector(".location-items");
 const back_species = document.querySelector(".back-species");
 const back_gender = document.querySelector(".back-gender");
 const back_location = document.querySelector(".back-location");
-let desButton = document.getElementById('desc');
-let ascButton = document.getElementById('asc');
+let desButton = document.getElementById("desc");
+let ascButton = document.getElementById("asc");
 
 drop_btn.onclick = () => {
   menu_wrapper.classList.toggle("show");
@@ -107,19 +112,31 @@ let modal = document.getElementById("myModal");
 let btn = document.querySelector(".btnmodal");
 let span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
+btn.onclick = function () {
   modal.style.display = "block";
-}
+};
 
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
-}
+};
 
-window.onclick = function(e) {
+window.onclick = function (e) {
   if (e.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 
-desButton.addEventListener('click', () => renderCards(order_desc(dataFiltered)));
-ascButton.addEventListener('click', () => renderCards(order_asc(dataFiltered)));
+desButton.addEventListener("click", () =>
+  renderCards(order_desc(dataFiltered))
+);
+ascButton.addEventListener("click", () => renderCards(order_asc(dataFiltered)));
+
+//filtrado por nombre
+let inputSeach = document.getElementById("seach");
+inputSeach.addEventListener("change", function (e) {
+  let text = e.currentTarget.value;
+  console.log(text);
+  const names = filterSearch(data.results, text);
+  console.log(names);
+  renderCards(names);
+});
