@@ -1,41 +1,90 @@
-export function templateCard(propiedades) {
-  return `<div class="cards" data-id="${propiedades.id}">
-    <div class="card" >
-      <div class="card-image">
-        <img  class="btnmodal" src="${propiedades.image}" />
+export function templateCard(information) {
+  const { id, image, name, status, species, gender, origin } = information;
+  return `
+    <div class="card"  data-id="${id}">
+      <div class="card-image" data-id="${id}">
+        <img  class="btnmodal" data-id="${id}" src="${image}" />
       </div>
-      <div class="details">
-        <p class="card-name"><h2>${propiedades.name}</h2></p>
-        <p class="card-status">Estatus: ${propiedades.status}</p>
-        <p class="card-specie">Especie: ${propiedades.species}</p>
-        <p class="card-gender">Genero: ${propiedades.gender}</p>
-        <p class="card-origin">Origen: ${propiedades.origin.name}</p>
+      <div class="details" data-id="${id}">
+        <p class="card-name" data-id="${id}">${name}</p>
+        <p class="card-status" data-id="${id}">Estatus: ${status}</p>
+        <p class="card-specie" data-id="${id}">Especie: ${species}</p>
+        <p class="card-gender" data-id="${id}">Genero: ${gender}</p>
+        <p class="card-origin" data-id="${id}">Origen: ${origin.name}</p>
       </div>
-    </div>
-  </div>`;
+    </div>`;
 }
-
-export function order_desc(characters) {
-  const desc = characters.sort((a, b) => {
-    if (a.name < b.name) return 1;
-    if (a.name > b.name) return -1;
-    return 0;
+export function filterElements(characters, key, value) {
+  const results = characters.filter((character) => {
+    return character[key] === value;
   });
-  return desc;
+  return results;
 }
-
-export function order_asc(characters) {
-  const asc = characters.sort((a, b) => {
-    if (b.name < a.name) return 1;
-    if (b.name > a.name) return -1;
-    return 0;
-  });
-  return asc;
+export function sortElements(characters, sortType) {
+  let results;
+  if (sortType === "asc") {
+    results = characters.sort((a, b) => {
+      //-1, 0 , 1
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    });
+  } else if (sortType === "desc") {
+    results = characters.sort((a, b) => {
+      //-1, 0 , 1
+      if (b.name > a.name) {
+        return 1;
+      }
+      if (b.name < a.name) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+  return results;
 }
-
 export function filterSearch(characters, textInput) {
   const names = characters.filter((character) => {
     return character.name.toLowerCase().includes(textInput.toLowerCase());
   });
   return names;
+}
+export function renderModals(information) {
+  const {
+    id,
+    image,
+    name,
+    status,
+    species,
+    type,
+    gender,
+    origin,
+    location,
+  } = information;
+  return `<div class="modal-info" data-id="${id}">
+      <div>
+        <img  src="${image}" />
+      </div>
+      <div >
+        <h2>${name}</h2>
+        <p >Estatus: ${status}</p>
+        <p >Especie: ${species}</p>
+        <p>Tipo: ${type}</p>
+        <p >Genero: ${gender}</p>
+        <p >Origen: ${origin.name}</p>
+        <p >Localizacion: ${location.name}</p>
+       
+      </div>
+    
+  </div>`;
+}
+export function findCharacter(characters, id) {
+  const result = characters.find((character) => {
+    return character.id === id;
+  });
+  return result;
 }
