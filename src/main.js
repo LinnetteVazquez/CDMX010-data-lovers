@@ -17,10 +17,10 @@ const iconMenu = document.getElementById("menu");
 const iconHome = document.getElementById("icon-home");
 const menu = document.querySelector("#menu-filter");
 //recibe listado de los personajes
-function renderCards(list) {
+function renderCards(characters) {
   let elements = "";
   //construye los HTML
-  list.forEach((character) => {
+  characters.forEach((character) => {
     elements += templateCard(character);
   });
   document.getElementById("data").innerHTML = elements;
@@ -76,4 +76,4 @@ iconHome.addEventListener("click",()=>{
 //renderiza todos
 renderCards(data.results);
 //asocia el evento clic a cada una de las tarjetas para abrir el modal
-
+modalLisener();
