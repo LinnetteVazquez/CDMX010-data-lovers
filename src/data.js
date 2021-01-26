@@ -1,5 +1,5 @@
 export function templateCard(character) {
-  const { id, image, name, status, species, gender, origin } = character;
+  const { id, image, name, status, species, gender } = character;
   return `
     <div class="card"  data-id="${id}">
       <div class="card-image" data-id="${id}">
@@ -10,7 +10,6 @@ export function templateCard(character) {
         <p class="card-status" data-id="${id}">Estatus: ${status}</p>
         <p class="card-specie" data-id="${id}">Especie: ${species}</p>
         <p class="card-gender" data-id="${id}">Genero: ${gender}</p>
-        <p class="card-origin" data-id="${id}">Origen: ${origin.name}</p>
       </div>
     </div>`;
 }
@@ -69,14 +68,14 @@ export function renderModals(information) {
       <div>
         <img  src="${image}" />
       </div>
-      <div >
-        <h2>${name}</h2>
+      <div class="individual-information">
+       <br> <h2>${name}</h2>
         <p >Estatus: ${status}</p>
         <p >Especie: ${species}</p>
         <p>Tipo: ${type}</p>
         <p >Genero: ${gender}</p>
         <p >Origen: ${origin.name}</p>
-        <p >Localizacion: ${location.name}</p>
+        <p >Localizacion: ${location.name}</p><br>
        
       </div>
     

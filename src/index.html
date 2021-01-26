@@ -1,68 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Schoolbell&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    
-  </head>
 
-  <body>
-    <header>
-      <img id="menu" src="./icons/bars-solid.svg" alt=""/>
-      <div class="div-img-banner"> 
-        <img src="./imagen/bannerTitulo.png"/>
-      </div>
-      <img id="home" src="./icons/home-solid.svg">
-    </header>
-    <nav id="nav" class="menu-nav">
-      <div class="filter-name">
-        <img class="icon-name" src="./icons/search-solid.svg">
-        <input
-          type="search"
-          placeholder="buscar personaje"
-          class="card-filter"
-          id="search"
-        />
-      </div>
-        <div >
-        <select class="orders" id="sort">
-          <option value="asc">Ascendente (A-Z)</option>
-          <option value="desc">Descendente (Z-A)</option>
-        </select>
-      </div> 
-    </nav>
-    <div id="menu-filter" class="filtros">
-      <ul class="menu">
-        <li class="filter-one"><img class="icon-fil" src="./icons/filter-solid.svg">Especie:
-          <ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Schoolbell&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+</head>
+
+<body>
+  <header>
+     <img src="./imagen/bannerTitulo.png" /> 
+    <div class="div-img-banner"></div>
+  </header>
+  <nav id="nav" class="menu-nav">
+    <div class="div-menu"> 
+      <img id="menu" src="./icons/bars-solid.svg" alt="" /></div>
+    <div class="filter-name">
+      <img class="icon-name" src="./icons/search-solid.svg">
+      <input type="search" placeholder="Buscar personaje" class="card-filter" id="search" />
+    </div>
+    <div class="div-orders">
+      <select class="orders" id="sort">
+        <option value="asc">Ascendente (A-Z)</option>
+        <option value="desc">Descendente (Z-A)</option>
+      </select>
+    </div>
+    <div class="menu-home"><img id="icon-home" class="icon-home" src="./icons/home-solid.svg"> </img></div>
+  </nav>
+  <div id="menu-filter" class="filtros-active">
+    <ul class="menu">
+      <li class="filter-one"><img class="icon-fil" src="./icons/filter-solid.svg">Especie:
+        <ul>
           <li class="menu-element" data-filter="species" data-value="Human">Human</li>
           <li class="menu-element" data-filter="species" data-value="Alien">Alien</li>
-          </ul> 
+        </ul>
       </li>
       <li class="filter-two"><img class="icon-fil" src="./icons/filter-solid.svg"> Estatus:
         <ul>
-        <li class="menu-element" data-filter="status" data-value="Alive">Vivo</li>
-        <li class="menu-element" data-filter="status" data-value="Dead">Muerto</li>
-      </ul>
+          <li class="menu-element" data-filter="status" data-value="Alive">Vivo</li>
+          <li class="menu-element" data-filter="status" data-value="Dead">Muerto</li>
+        </ul>
       <li class="filter-three"><img class="icon-fil" src="./icons/filter-solid.svg">Genero:
         <ul>
           <li class="menu-element" data-filter="gender" data-value="Female">Femenino</li>
@@ -70,16 +53,16 @@
         </ul>
       </li>
       </li>
-      </ul>
+    </ul>
   </div>
-      <main>
-       
-      <section id="data"></section>
-    </main>
-    <div id="modal" class="modal">
+  <main>
+    <section id="data"></section>
+  </main>
+  <div id="modal" class="modal">
     <div id="content" class="modal-content">
     </div>
-      </div>   
-    <script src="main.js" type="module"></script>
-  </body>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>

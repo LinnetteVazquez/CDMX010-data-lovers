@@ -14,6 +14,7 @@ const inputSearch = document.getElementById("search");
 const modalContent = document.getElementById("content");
 const modal = document.getElementById("modal");
 const iconMenu = document.getElementById("menu");
+const iconHome = document.getElementById("icon-home");
 const menu = document.querySelector("#menu-filter");
 //recibe listado de los personajes
 function renderCards(characters) {
@@ -23,6 +24,7 @@ function renderCards(characters) {
     elements += templateCard(character);
   });
   document.getElementById("data").innerHTML = elements;
+  modalLisener();
 }
 //Filtrado gral
 const filterCards = (e) => {
@@ -46,7 +48,9 @@ const modalLisener = () => {
 };
 //FUNCION DE ORDENADO
 document.getElementById("sort").addEventListener("change", (e) => {
+  //console.log(e.target.value);
   const sortedElements = sortElements(window.characters, e.target.value);
+  //console.log(sortedElements);
   renderCards(sortedElements);
   modalLisener();
 });
@@ -65,6 +69,9 @@ modal.addEventListener("click", () => {
 });
 iconMenu.addEventListener("click", () => {
   menu.classList.toggle("filtros-active");
+});
+iconHome.addEventListener("click",()=>{
+  window.location.reload(); 
 });
 //renderiza todos
 renderCards(data.results);

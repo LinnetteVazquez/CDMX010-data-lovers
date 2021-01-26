@@ -111,6 +111,18 @@ describe("filterElements", () => {
       expect(character.species).toBe("Human");
     });
   });
+  it('returns an array of alive characters by status alive ', () => {
+    const results = filterElements(characters, 'status', 'Alive')
+    results.forEach(character => {
+      expect(character.status).toBe('Alive');
+    });
+  });
+    it('returns an array of human characters by specie human', () => {
+      const results = filterElements(characters, 'specie', 'Human')
+      results.forEach(character => {
+        expect(character.species).toBe('Human');
+      });
+    });
 });
 
 describe("sortElements", () => {
@@ -131,6 +143,17 @@ describe("sortElements", () => {
   });
 });
 
+describe('filterSearch',() => {
+  it('is a function', () => {
+  expect(typeof filterSearch).toBe('function');
+  });
+  it('retunrs an array of characters by name',()=>{
+    const name = filterSearch(characters,'textInput');
+    name.forEach(character =>{
+      expect(character.name).toBe('mor');
+    });
+  }); 
+ });    
 describe("findCharacter", () => {
   it("is a function", () => {
     expect(typeof findCharacter).toBe("function");
@@ -141,18 +164,3 @@ describe("findCharacter", () => {
   });
 });
 
-describe("filterSearch", () => {
-  it("is a function", () => {
-    expect(typeof filterSearch).toBe("function");
-  });
-  it("return an array of search name", () => {
-    const search = "Morty";
-    const results = filterSearch(characters, search);
-    results.forEach((character) => {
-      const isCorrectSearch = character.name
-        .toLowerCase()
-        .includes(search.toLowerCase());
-      expect(isCorrectSearch).toBe(true);
-    });
-  });
-});
