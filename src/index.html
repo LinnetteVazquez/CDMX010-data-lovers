@@ -1,189 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Schoolbell&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header>
-      <div class="div-img-banner">
-        <img src="./imagen/bannerTitulo.png" alt="" />
-      </div>
-      <nav id="nav" class="menu-nav">
-        <div>
-          <div class="drop-menu">
-            Filtros
-            <span class="material-icons"> arrow_drop_down_circle </span>
-          </div>
-          <div class="wrapper">
-            <ul class="menu-bar">
-              <li class="species-items">
-                <a href="#"
-                  ><i><span class="material-icons">chevron_right </span></i>
-                  Especie
-                </a>
-              </li>
-              <li class="gender-items">
-                <a href="#"
-                  ><i><span class="material-icons">chevron_right </span></i>
-                  Género
-                </a>
-              </li>
-              <li class="location-items">
-                <a href="#"
-                  ><i><span class="material-icons">chevron_right </span></i>
-                  Estatus
-                </a>
-              </li>
-            </ul>
-            <!--Submenu-Specie-->
-            <ul class="specie-drop">
-              <li class="back-species">
-                <span class="material-icons">arrow_back</span>
-                Especie
-              </li>
-              <li id="humans" name="race">
-                <a href="#" data-value="Human">Humano </a>
-              </li>
-              <li id="aliens" name="race">
-                <a href="#" data-value="Alien">Alien </a>
-              </li>
-            </ul>
-            <!--Submenu-Gender-->
-            <ul class="gender-drop">
-              <li class="back-gender">
-                <span class="material-icons">arrow_back</span>
-                Género
-              </li>
-              <li name="race"><a href="#" data-value="Female">Femenino </a></li>
-              <li name="race"><a href="#" data-value="Male">Masculino </a></li>
-            </ul>
-            <!--Submenu-Location-->
-            <ul class="location-drop">
-              <li class="back-location">
-                <span class="material-icons">arrow_back</span>
-                Estatus
-              </li>
-              <li name="race"><a href="#" data-value="Alive">Vivo </a></li>
-              <li name="race"><a href="#" data-value="Dead">Muerto </a></li>
-            </ul>
-          </div>
-        </div>
-        <!--Buscador-->
-        <div>
-          <div class="drop-menu-order">
-            Ordenar
-            <span class="material-icons"> arrow_drop_down_circle </span>
-          </div>
-          <div class="wrapper-order">
-            <ul class="menu-bar">
-              <li name="race" value="desc" id="btn-order-asc" class="ascendant">
-                <button id="asc">Ascendente A-Z</button>
-              </li>
-              <li name="race" id="btn-order-desc" class="descending">
-                <button id="desc" data-value="desc">Descendente Z-A</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="filter-name">
-          <img src="./icons/search-solid.svg" />
-          <input
-            type="seach"
-            placeholder="Buscar personaje"
-            class="card-filter"
-            id="seach"
-          />
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section id="data"></section>
-    </main>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Schoolbell&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="div-general">
-      <div class="div-img-modal">
-        <img id="img-modal" src="./imagen/image-5.png" alt="">
-      </div>
-      <div class="div-info">
-        <table>
-          <tr>
-            <th colspan="2">
-              <h3>INFORMACIÓN GENERAL</h3>
-            </th>
-          </tr>
-          <tr>
-            <th>ID:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>NOMBRE:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>ESTATUS:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>ESPECIE:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>TIPO:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>GÉNERO:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>ORIGEN:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>LOCALIZACIÓN:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EPISODIOS:</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>FECHA DE CREACIÓN:</th>
-            <td></td>
-          </tr>
-        </table>
+</head>
 
-        <p><br></p>
-       
-      </div>
-     </div>
-</div>
-</div>
+<body>
+  <header>
+     <img src="./imagen/bannerTitulo.png" /> 
+    <div class="div-img-banner"></div>
+  </header>
+  <nav id="nav" class="menu-nav">
+    <div class="div-menu"> 
+      <img id="menu" src="./icons/bars-solid.svg" alt="" /></div>
+    <div class="filter-name">
+      <img class="icon-name" src="./icons/search-solid.svg">
+      <input type="search" placeholder="Buscar personaje" class="card-filter" id="search" />
+    </div>
+    <div class="div-orders">
+      <select class="orders" id="sort">
+        <option value="asc">Ascendente (A-Z)</option>
+        <option value="desc">Descendente (Z-A)</option>
+      </select>
+    </div>
+    <div class="menu-home"><img id="icon-home" class="icon-home" src="./icons/home-solid.svg"> </img></div>
+  </nav>
+  <div id="menu-filter" class="filtros-active">
+    <ul class="menu">
+      <li class="filter-one"><img class="icon-fil" src="./icons/filter-solid.svg">Especie:
+        <ul>
+          <li class="menu-element" data-filter="species" data-value="Human">Human</li>
+          <li class="menu-element" data-filter="species" data-value="Alien">Alien</li>
+        </ul>
+      </li>
+      <li class="filter-two"><img class="icon-fil" src="./icons/filter-solid.svg"> Estatus:
+        <ul>
+          <li class="menu-element" data-filter="status" data-value="Alive">Vivo</li>
+          <li class="menu-element" data-filter="status" data-value="Dead">Muerto</li>
+        </ul>
+      <li class="filter-three"><img class="icon-fil" src="./icons/filter-solid.svg">Genero:
+        <ul>
+          <li class="menu-element" data-filter="gender" data-value="Female">Femenino</li>
+          <li class="menu-element" data-filter="gender" data-value="Male">Masculino</li>
+        </ul>
+      </li>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <section id="data"></section>
+  </main>
+  <div id="modal" class="modal">
+    <div id="content" class="modal-content">
+    </div>
+  </div>
   <script src="main.js" type="module"></script>
 </body>
 
 </html>
-    
