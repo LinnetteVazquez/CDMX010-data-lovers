@@ -77,3 +77,9 @@ Lo que pudimos observar al realizar los distintos test de usabilidad, fue que el
 Pudimos mejorarlo antes de comenzar a crear el prototipo de alta fidelidad, así que no hubo mayores inconvenientes.
 
 ## 5. Prototipo de Alta Fidelidad.
+
+**Proyeccto de Rick and Morty**
+
+![enter image description here](https://github.com/LinnetteVazquez/imagenes/blob/master/presentacion%20de%20la%20pagina.gif?raw=true)
+
+[Protoipo de alta fidelidad en figma](https://www.figma.com/proto/cTJkabL39TspCnzBLiKodU/Prototipo-de-alta-fidelidad-DataLovers?node-id=143:263&scaling=contain)
