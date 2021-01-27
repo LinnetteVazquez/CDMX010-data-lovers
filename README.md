@@ -34,7 +34,7 @@ al lado derecho.
 
 ## 2. Definición del Producto
 
-Este proyecto se enfoca a fanáticos de la serie para facilitarles información a cerca de sus personajes favoritos o de cualquier personaje del que se encuentren interesados y que de manera específica puedan ubicarlos en esta página ceada para dicho fín.
+Este proyecto se enfoca a fanáticos de la serie para facilitarles información a cerca de sus personajes favoritos o de cualquier personaje del que se encuentren interesados y que de manera específica puedan ubicarlos en esta página creada para dicho fín.
 
 Esta pagina web que diseñamos esta enfocada a usuarios que tienen interés o han visto la serie de televisión de **Rick and Morty**, por lo que al entrar a esta pagina web podrán observar todos los personajes que aparecen en la serie, también tendrán la oportunidad de buscar cualquier personaje de manera especifica por nombre u ordenarlos alfabéticamente si así lo desean, contiene un menú en el que podrán filtrar dichos personajes de acuerdo a lo que deseen buscar, por su genero, especie o estatus.
 
